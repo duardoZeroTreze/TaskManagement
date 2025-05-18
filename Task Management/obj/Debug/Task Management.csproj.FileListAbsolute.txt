@@ -1,0 +1,11 @@
+C:\Users\Eduardo\Documents\Estudos\C#\Task Management\Task Management\obj\Debug\Task Management.csproj.AssemblyReference.cache
+C:\Users\Eduardo\Documents\Estudos\C#\Task Management\Task Management\obj\Debug\Task_Management.Task_Management.resources
+C:\Users\Eduardo\Documents\Estudos\C#\Task Management\Task Management\obj\Debug\Task_Management.Properties.Resources.resources
+C:\Users\Eduardo\Documents\Estudos\C#\Task Management\Task Management\obj\Debug\Task Management.csproj.GenerateResource.cache
+C:\Users\Eduardo\Documents\Estudos\C#\Task Management\Task Management\obj\Debug\Task Management.csproj.CoreCompileInputs.cache
+C:\Users\Eduardo\Documents\Estudos\C#\Task Management\Task Management\bin\Debug\Task Management.exe.config
+C:\Users\Eduardo\Documents\Estudos\C#\Task Management\Task Management\bin\Debug\Task Management.exe
+C:\Users\Eduardo\Documents\Estudos\C#\Task Management\Task Management\bin\Debug\Task Management.pdb
+C:\Users\Eduardo\Documents\Estudos\C#\Task Management\Task Management\obj\Debug\Task Management.exe
+C:\Users\Eduardo\Documents\Estudos\C#\Task Management\Task Management\obj\Debug\Task Management.pdb
+C:\Users\Eduardo\Documents\Estudos\C#\Task Management\Task Management\obj\Debug\Task_Management.View.Update.resources
