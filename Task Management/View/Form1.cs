@@ -25,7 +25,7 @@ namespace Task_Management
         private void btn_add_Click(object sender, EventArgs e)
         {
             string nome = txt_name.Text;
-            string date = dtp_date.Value.ToString("yyyy-MM-dd");
+            DateTime date = dtp_date.Value;
             string status = "Pending";
 
             if (!string.IsNullOrEmpty(nome))
@@ -38,9 +38,26 @@ namespace Task_Management
 
         private void btn_remove_Click(object sender, EventArgs e)
         {
-            int index = dgv_tasks.CurrentRow.Index;
-            taskc.RemoveTask(index);
-            UpdateDataGridView();
+            if (dgv_tasks.CurrentRow != null)
+            {
+                int taskId = Convert.ToInt32(dgv_tasks.CurrentRow.Cells["Id"].Value);
+
+                Taskk toBeDeleted = taskc.tasks.FirstOrDefault(t => t.Id == taskId);
+
+                if (toBeDeleted != null)
+                {
+                    taskc.RemoveTask(toBeDeleted);
+                    UpdateDataGridView();
+                }
+                else
+                {
+                    MessageBox.Show("Task not found");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No task selected.");
+            }
         }
 
         private void UpdateDataGridView()

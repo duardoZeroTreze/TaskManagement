@@ -22,15 +22,18 @@ namespace Task_Management.View
             InitializeComponent();
             taskc = tc;
             this.index = index;
-            txt_name.Text = taskc.tasks[index].Name;
-            dtp_date.Value = DateTime.ParseExact(taskc.tasks[index].Date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-            cb_status.Text = taskc.tasks[index].Status;
+
+            var task = taskc.tasks[index];
+
+            txt_name.Text = task.Name;
+            dtp_date.Value = task.Date;
+            cb_status.SelectedItem = task.Status;
         }
 
         private void btn_update_Click(object sender, EventArgs e)
         {
             string nome = txt_name.Text;
-            string date = dtp_date.Value.ToString("yyyy-MM-dd");
+            DateTime date = dtp_date.Value;
             string status = cb_status.Text;
 
             if (string.IsNullOrWhiteSpace(status))

@@ -11,16 +11,16 @@ namespace Task_Management.Model
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
         public string Status { get; set; }
-        public Taskk(int id, string name, string date, string status)
+        public Taskk(int id, string name, DateTime date, string status)
         {
             Id = id;
             Name = name;
             Date = date;
             Status = status;
         }
-        public Taskk(string name, string date, string status)
+        public Taskk(string name, DateTime date, string status)
         {
             Name = name;
             Date = date;

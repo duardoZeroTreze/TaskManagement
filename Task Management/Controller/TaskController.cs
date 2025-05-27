@@ -37,9 +37,23 @@ namespace Task_Management.Controller
             tasks.Add(t);
         }
 
-        internal void RemoveTask(int index)
+        internal void RemoveTask(Taskk task)
         {
-            tasks.RemoveAt(index);
+            string connectionString = @"Server=localhost\SQLEXPRESS;Database=db_task_management;Integrated Security=True;";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = "DELETE FROM tb_task WHERE id = @id";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", task.Id);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         public List<Taskk> GetTasksFromDatabase()
@@ -57,7 +71,7 @@ namespace Task_Management.Controller
                     while (reader.Read())
                     {
                         string name = reader["Name"].ToString();
-                        string date = Convert.ToDateTime(reader["Date"]).ToString("yyyy-MM-dd");
+                        DateTime date = Convert.ToDateTime(reader["Date"]);
                         string status = reader["Status"].ToString();
 
                         tasks.Add(new Taskk(name, date, status));
@@ -107,8 +121,8 @@ namespace Task_Management.Controller
                     {
                         Taskk task = new Taskk(
                             reader.GetInt32(0),               
-                            reader.GetString(1),              
-                            reader.GetString(2),              
+                            reader.GetString(1),
+                            reader.GetDateTime(2),
                             reader.GetString(3)                
                         );
 
